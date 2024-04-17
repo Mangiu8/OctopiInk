@@ -1,0 +1,55 @@
+﻿@model OctopInk.Models.Prodotti
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2 class="text-center pt-3 m-0">Aggiungi Prodotto</h2>
+
+@using (Html.BeginForm("Create", "Prodotti", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal p-3">
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.Nome, htmlAttributes: new { @class = "control-label col-md-2 fw-bold mb-2" })
+            <div class="col-md-12">
+                @Html.EditorFor(model => model.Nome, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Nome, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group mb-3">
+            <h6 class="fw-bold mt-2 mb-2">Seleziona l'immagine principale</h6>
+            <input type="file" name="file" class="form-control" />
+        </div>
+
+        <div class="form-group mb-3">
+            <h6 class="fw-bold mt-2 mb-2">Seleziona le immagini aggiuntive</h6>
+            <input type="file" name="file2" class="form-control" />
+            <input type="file" name="file3" class="form-control" />
+            <input type="file" name="file4" class="form-control" />
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Prezzo, htmlAttributes: new { @class = "control-label col-md-2 fw-bold mb-2" })
+            <div class="col-md-12">
+                @Html.EditorFor(model => model.Prezzo, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Prezzo, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-12">
+                <input type="submit" value="Create" class="btn btn-secondary rounded-pill mt-2" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Torna alla lista", "Index", new { }, new { @class = "btn btn-secondary rounded-pill ms-3" })
+
+</div>

@@ -1,0 +1,69 @@
+﻿@model OctopInk.Models.Prodotti
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2 class="text-center">Modifica</h2>
+
+@using (Html.BeginForm("Edit", "Prodotti", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal p-3">
+        <h4 class="text-center">Prodotti</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.IdProdotto)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Nome, htmlAttributes: new { @class = "control-label col-md-2 fw-bold mb-2" })
+            <div class="col-md-12">
+                @Html.EditorFor(model => model.Nome, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Nome, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <h6 class="fw-bold mt-2 mb-2">Carica nuova immagine principale</h6>
+            <input type="file" name="file" class="form-control" />
+        </div>
+
+        @if (!string.IsNullOrEmpty(Model.Foto))
+        {
+            <div class="form-group mt-2 mb-2">
+                <label class="fw-bold">Immagini attuali: </label>
+                <img src="@Model.Foto" alt="Immagine attuale" class="ms-3" width="100" />
+                <img src="@Model.Foto2" alt="Immagine attuale" class="ms-3" width="100" />
+                <img src="@Model.Foto3" alt="Immagine attuale" class="ms-3" width="100" />
+                <img src="@Model.Foto4" alt="Immagine attuale" class="ms-3" width="100" />
+
+            </div>
+        }
+
+        <div class="form-group">
+            <h6 class="fw-bold mt-2 mb-2">Carica nuove immagini aggiuntive</h6>
+            <input type="file" name="file2" class="form-control" />
+            <input type="file" name="file3" class="form-control" />
+            <input type="file" name="file4" class="form-control" />
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Prezzo, htmlAttributes: new { @class = "control-label col-md-2 fw-bold mt-2 mb-2" })
+            <div class="col-md-12">
+                @Html.EditorFor(model => model.Prezzo, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Prezzo, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-secondary rounded-pill mt-2" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Torna alla lista", "Index", new {}, new { @class = "btn btn-secondary rounded-pill ms-3" })
+</div>

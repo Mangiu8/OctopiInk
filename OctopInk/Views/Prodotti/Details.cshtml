@@ -1,0 +1,52 @@
+﻿@model OctopInk.Models.Prodotti
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2 class="text-center pt-2">Dettagli prodotto</h2>
+
+<h2  class="text-center">@Model.Nome</h2>
+<div class="product-details">
+    <div id="main-image-container">
+        <img id="main-image" src="@(!string.IsNullOrEmpty(Model.Foto) ? Url.Content(Model.Foto) : Url.Content("~/Content/img/deafultimg.png"))" alt="Immagine Principale" />
+    </div>
+    <div id="other-images-container">
+        <div class="other-image">
+            <img class="other-image-img" src="@(!string.IsNullOrEmpty(Model.Foto) ? Url.Content(Model.Foto) : Url.Content("~/Content/img/deafultimg.png"))" alt="Immagine Principale" />
+        </div>
+        <div class="other-image">
+            <img class="other-image-img" src="@(!string.IsNullOrEmpty(Model.Foto2) ? Url.Content(Model.Foto2) : Url.Content("~/Content/img/deafultimg.png"))" alt="Immagine 2" />
+        </div>
+        <div class="other-image">
+            <img class="other-image-img" src="@(!string.IsNullOrEmpty(Model.Foto3) ? Url.Content(Model.Foto3) : Url.Content("~/Content/img/deafultimg.png"))" alt="Immagine 3" />
+        </div>
+        <div class="other-image">
+            <img class="other-image-img" src="@(!string.IsNullOrEmpty(Model.Foto4) ? Url.Content(Model.Foto4) : Url.Content("~/Content/img/deafultimg.png"))" alt="Immagine 4" />
+        </div>
+    </div>
+    <h3 class="product-price mt-2 mb-2">Prezzo: € @Model.Prezzo.ToString("F2")</h3>
+    @using (Html.BeginForm("AddToCart", "Prodotti", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+        <input type="hidden" name="id" value="@Model.IdProdotto" />
+        <div class="d-flex align-items-center">
+            <input id="Quantita" type="number" name="quantita" value="1" min="1" max="30" class="shadow form-control me-1" style="width: auto;">
+            <input type="submit" value="Aggiungi al Carrello" class="btn btn-success shadow product-button rounded-pill buy-button">
+            @Html.ActionLink("Back to List", "Index" ,new { }, new { @class = "btn btn-secondary rounded-pill ms-2" })
+        </div>
+    }
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const mainImage = document.getElementById("main-image");
+        const otherImages = document.querySelectorAll(".other-image-img");
+
+        otherImages.forEach(img => {
+            img.addEventListener("click", function () {
+                mainImage.src = img.src;
+            });
+        });
+    });
+</script>

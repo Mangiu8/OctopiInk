@@ -1,0 +1,196 @@
+﻿
+
+@model IEnumerable<OctopInk.Models.Prodotti>
+
+@using OctopInk.Models
+<main>
+    <div class="hero-image">
+        <div class="hero-text">
+            <h1 class="hero-h1">Octopi Ink</h1>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 p-0">
+                <div class="about-studio">
+                    <h2 class="text-center text-light mt-2 mb-2">About The Studio</h2>
+                </div>
+                <h3 class="text-center mt-2">Octopi Ink Tattoo</h3>
+                <div class="p-2 flex-container">
+                    <p class="studio-description">
+                        Benvenuti nel Dastin Tattoo Atelier, lo studio di Tattoo e Piercing a Rimini! Siamo specializzati in stili unici e creativi, tra cui il fine line, manga e cartoon. Se stai cercando un tatuaggio con linee sottili e dettagli precisi, sei nel posto giusto.
+                        Presso il nostro atelier a Rimini, mettiamo al centro la tua visione artistica. Ogni tatuaggio è un’opera d’arte personalizzata, realizzata con maestria e attenzione ai dettagli. Siamo appassionati di creare design che catturano l’essenza dei personaggi manga e cartoon, portando alla vita le tue idee e i tuoi personaggi preferiti sulla tua pelle.
+                        Il Dastin Tattoo Atelier si trova in una posizione privilegiata a Rimini, offrendo un’esperienza unica ai nostri clienti. La nostra squadra di artisti talentuosi è pronta ad accoglierti nel nostro ambiente accogliente e professionale, garantendo un’igiene rigorosa e l’utilizzo di materiali di alta qualità.
+                        Per ulteriori informazioni, prenotazioni o per discutere delle tue idee tattoo, ti invitiamo a contattare il Dastin Tattoo Atelier. Siamo disponibili sul nostro sito web o tramite i nostri canali social. Non vediamo l’ora di collaborare con te per creare un tatuaggio che ti rappresenti al meglio.
+                        Ricorda, siamo il Dastin Tattoo Atelier, lo studio di Tattoo e Piercing a Rimini specializzato in fine line, manga e cartoon. Siamo qui per trasformare la tua immaginazione in arte sulla pelle. Contattaci oggi stesso e scopri il nostro talento artistico.
+                    </p>
+                    <img src="~/Content/img/studio1.jpeg" alt="Foto dello studio" class="studio-image" />
+                    <img src="~/Content/img/studio2.jpeg" alt="Foto dello studio" class="studio-image" />
+                </div>
+            </div>
+            <h3 class="text-center mt-2">Il nostro merchandise</h3>
+            <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    @foreach (var item in Model)
+                    {
+                        <div class="carousel-item @(item == Model.First() ? "active" : "")">
+                            <a href="@Url.Action("Index", "Prodotti")">
+                                <img src="@item.Foto" class="d-block w-100" alt="Prodotti">
+                            </a>
+                        </div>
+                    }
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+            <div class="about-studio mt-2 mb-2">
+                <h2 class="text-center text-light mt-2 mb-2">Resident Artist</h2>
+            </div>
+            <div class="artist-info-left">
+                <h2 class="mb-0">Rosario Pisani</h2>
+                <p class="mb-0">a.k.a.</p>
+                <h4 class="artist-name">pisaniconceptink <a class="artist-social" href="https://www.instagram.com/pisaniconceptink/"><i class="bi bi-instagram"></i></a></h4>
+            </div>
+            <div class="col-md-12 mb-4 artist-details-left">
+                <div class="artist-images-left">
+                    <img src="~/Content/img/rosario.png" alt="Foto di Rosario Pisani" class="artist-image" />
+                    <img src="~/Content/img/tatto1.png" alt="" class="artist-tattoo" />
+                    <img src="~/Content/img/tattoo2.png" alt="" class="artist-tattoo" />
+                    <img src="~/Content/img/tatto3.png" alt="" class="artist-tattoo" />
+                    <img src="~/Content/img/tattoo4.png" alt="" class="artist-tattoo th-img" />
+                </div>
+                <div class="artist-description">
+                    <p>
+                        Questo tatuatore è un vero maestro del black work, un'arte che si distingue per
+                        il suo stile audace e incisivo. Le sue opere sono caratterizzate da linee nette e dettagli intricati che emergono su una
+                        base nera intensa, creando contrasti mozzafiato e un'impressionante profondità visiva. Ogni disegno è eseguito con precisione
+                        chirurgica e una conoscenza impeccabile dell'anatomia umana, risultando in opere d'arte che combinano abilmente l'estetica gotica
+                        con l'originalità contemporanea. La sua reputazione è fondata su una tecnica impeccabile e una capacità di trasformare le idee dei clienti
+                        in creazioni visivamente sbalorditive, che resistono al tempo e lasciano un'impronta indelebile sulla pelle.
+                    </p>
+                </div>
+            </div>
+            <hr class="separator" />
+            <div class="artist-info-right">
+                <h2 class="mb-0">Giovanni Lucarelli</h2>
+                <p class="mb-0">a.k.a.</p>
+                <h4 class="artist-name"><a href="https://www.instagram.com/lucare.ink/"><i class="bi bi-instagram"></i></a> lucare.ink </h4>
+            </div>
+            <div class="col-md-12 artist-details-right">
+                <div class="artist-images-right">
+                    <img src="~/Content/img/lucare.png" alt="Foto di Giovanni Lucarelli" class="artist-image" />
+                    <img src="~/Content/img/tattoGian1.png" alt="" class="artist-tattoo" />
+                    <img src="~/Content/img/tattooGian2.png" alt="" class="artist-tattoo" />
+                    <img src="~/Content/img/tattooGian3.png" alt="" class="artist-tattoo th-img" />
+                    <img src="~/Content/img/tattooGian4.png" alt="" class="artist-tattoo" />
+                </div>
+                <div class="artist-description">
+                    <p>
+                        Se sei un appassionato di anime e manga alla ricerca di un tatuatore che possa trasformare il tuo amore per questo genere in arte permanente sulla pelle, allora sei nel posto giusto. Sono Lucare.ink, un esperto tatuatore con una passione speciale per l'universo dell'anime e del manga.
+                        La mia arte si ispira ai fantastici mondi creati dai più grandi maestri dell'animazione giapponese. Con anni di esperienza nel campo del tatuaggio, ho perfezionato la capacità di trasformare i personaggi iconici, le scene emozionanti e i simboli distintivi dei tuoi anime e manga preferiti in tatuaggi di alta qualità e di grande impatto visivo.
+                        Ogni progetto di tatuaggio che creo è un'opera d'arte personalizzata, progettata su misura per soddisfare i desideri e la personalità di ogni cliente. Utilizzo tecniche avanzate di tatuaggio per garantire linee nitide, colori vibranti e dettagli impeccabili, che mantengono la fedeltà all'originale e durano nel tempo.
+                    </p>
+                </div>
+            </div>
+            <hr />
+            <div class="artist-info-left">
+                <h2 class="mb-0">Cristina Forte</h2>
+                <p class="mb-0">a.k.a.</p>
+                <h4 class="artist-name">CristinaforteArt <a class="artist-social" href="https://www.instagram.com/cristinaforteart/"><i class="bi bi-instagram"></i></a></h4>
+            </div>
+            <div class="col-md-12 mb-4 artist-details-left">
+                <div class="artist-images-left">
+                    <img src="~/Content/img/Cristina.png" alt="Foto di Cristina Forte" class="artist-image" />
+                    <img src="~/Content/img/tattooCri1.png" alt="" class="artist-tattoo" />
+                    <img src="~/Content/img/tattooCri2.png" alt="" class="artist-tattoo" />
+                    <img src="~/Content/img/tattooCri3.png" alt="" class="artist-tattoo" />
+                    <img src="~/Content/img/tattooCri4.png" alt="" class="artist-tattoo th-img" />
+                </div>
+                <div class="artist-description">
+                    <p>
+                        Se sei un'appassionata di tatuaggi realistici alla ricerca di una professionista capace di trasformare la tua visione in arte duratura sulla pelle, sei nel posto giusto. Sono Valeria Ink, un'esperta tatuatrice con una passione speciale per i tatuaggi realistici.
+                        La mia arte si ispira alla bellezza della natura e dell'umanità, cercando sempre di catturare emozioni e dettagli in ogni opera. Con anni di esperienza nel settore, ho affinato la capacità di trasformare idee e concetti in tatuaggi di alta qualità e di grande impatto visivo, mantenendo sempre un tocco di realismo senza tempo.
+                        Ogni tatuaggio che creo è un'opera unica e personalizzata, progettata su misura per esprimere la personalità e il gusto di ogni cliente. Utilizzo tecniche avanzate di tatuaggio per garantire linee precise, sfumature realistiche e dettagli impeccabili, che conferiscono alla pelle un aspetto autentico e duraturo nel tempo.
+                    </p>
+                </div>
+            </div>
+            <hr class="separator" />
+            <div class="artist-info-right">
+                <h2 class="mb-0">Francesca Pannone</h2>
+                <p class="mb-0">a.k.a.</p>
+                <h4 class="artist-name"><a href="https://www.instagram.com/francesca_pannone/"><i class="bi bi-instagram"></i></a> francesca Pannone </h4>
+            </div>
+            <div class="col-md-12 artist-details-right">
+                <div class="artist-images-right">
+                    <img src="~/Content/img/Francesca.png" alt="Foto di Francesca Pannone" class="artist-image" />
+                    <img src="~/Content/img/tattooFra1.png" alt="" class="artist-tattoo" />
+                    <img src="~/Content/img/tattooFra2.png" alt="" class="artist-tattoo" />
+                    <img src="~/Content/img/tattooFra3.png" alt="" class="artist-tattoo" />
+                    <img src="~/Content/img/tattooFra4.png" alt="" class="artist-tattoo th-img" />
+                </div>
+                <div class="artist-description">
+                    <p>
+                        Se sei alla ricerca di una tatuatrice specializzata nell'engraving, capace di trasformare la tua pelle in un intricato capolavoro di linee incise, allora sei nel posto giusto. Sono Alessandra Art, una tatuatrice esperta nell'arte dell'engraving.
+                        La mia passione per questa tecnica unica si riflette nei tatuaggi che creo, che si distinguono per la loro precisione e dettagliate intagliature sulla pelle. Con anni di esperienza nel settore, ho perfezionato la capacità di trasformare idee e concetti in tatuaggi di alta qualità e di grande impatto visivo, utilizzando l'engraving come strumento principale per esprimere creatività e stile.
+                        Ogni progetto di tatuaggio che realizzo è un'opera d'arte personalizzata, progettata su misura per valorizzare la tua pelle e rendere unica la tua esperienza. Utilizzo tecniche avanzate di engraving per creare linee sottili e dettagliate, che conferiscono al tatuaggio un aspetto tridimensionale e un tocco di eleganza senza tempo.
+                        Se desideri un tatuaggio che sia sia unico, dettagliato ed espressivo, sono qui per trasformare la tua visione in realtà sulla tua pelle.
+                    </p>
+                </div>
+            </div>
+            <hr />
+            <div class="artist-info-left">
+                <h2 class="mb-0">Davide Cariello</h2>
+                <p class="mb-0">a.k.a.</p>
+                <h4 class="artist-name">
+                    davide_cariello_tattooer <a class="artist-social" href="https://www.instagram.com/davide_cariello_tattooer/"><i class="bi bi-instagram"></i></a>
+                </h4>
+            </div>
+            <div class="col-md-12 mb-4 artist-details-left">
+                <div class="artist-images-left">
+                    <img src="~/Content/img/Davide.png" alt="Foto di Davide Cariello" class="artist-image" />
+                    <img src="~/Content/img/tattooDav1.png" alt="" class="artist-tattoo" />
+                    <img src="~/Content/img/tattooDav2.png" alt="" class="artist-tattoo" />
+                    <img src="~/Content/img/tattooDav3.png" alt="" class="artist-tattoo" />
+                    <img src="~/Content/img/tattooDav4.png" alt="" class="artist-tattoo th-img" />
+                </div>
+                <div class="artist-description">
+                    <p>
+                        Se sei un appassionato di stile "old school" e cerchi un tatuatore che possa portare alla vita i classici disegni e stili tradizionali, sei nel posto giusto. Sono Luca Ink, un tatuatore esperto con una passione per l'arte tattoo "old school".
+                        La mia arte si ispira alla ricca tradizione dei tatuaggi classici, con motivi iconici come rose, teschi, ancore, e pin-up. Con anni di esperienza nel settore, ho perfezionato le tecniche che rendono questi disegni così distintivi e attraenti.
+                        Ogni tatuaggio che creo è un omaggio al passato, progettato su misura per i desideri di ogni cliente. Utilizzo colori audaci, contorni spessi e stili tradizionali per creare tatuaggi che mantengono lo spirito autentico dell'arte tattoo "old school".
+                        Se desideri un tatuaggio che rappresenti l'eredità storica di questa forma d'arte, sono qui per trasformare la tua visione in un capolavoro duraturo sulla tua pelle. Contattami per discutere le tue idee e creare insieme un tatuaggio che sia un tributo alla bellezza senza tempo dello stile "old school"
+                    </p>
+                </div>
+            </div>
+            <hr class="separator" />
+            <div class="artist-info-right">
+                <h2 class="mb-0">Alessandro Tufano</h2>
+                <p class="mb-0">a.k.a.</p>
+                <h4 class="artist-name"><a href="https://www.instagram.com/bako_body_piercing/"><i class="bi bi-instagram"></i></a> Bako</h4>
+            </div>
+            <div class="col-md-12 artist-details-right">
+                <div class="artist-images-right">
+                    <img src="~/Content/img/Bako.png" alt="Foto di Alessandro Tufano" class="artist-image" />
+                    <img src="~/Content/img/piercing1.png" alt="" class="artist-tattoo" />
+                    <img src="~/Content/img/piercing2.png" alt="" class="artist-tattoo" />
+                    <img src="~/Content/img/piercing3.png" alt="" class="artist-tattoo th-img" />
+                    <img src="~/Content/img/piercing4.png" alt="" class="artist-tattoo" />
+                </div>
+                <div class="artist-description">
+                    <p>
+                        Se sei alla ricerca di una piercier esperta e appassionata, pronta a trasformare il tuo stile con piercing personalizzati e di alta qualità, allora sono qui per aiutarti. Sono Elena Piercing, una professionista con una passione speciale per l'arte dei piercing.
+                        La mia arte si ispira alla bellezza dell'autoespressione attraverso il corpo, e ho dedicato anni a perfezionare le mie abilità nel campo dei piercing. Offro una vasta gamma di opzioni, dalle più classiche alle più creative, per aiutarti a ottenere il look desiderato in modo sicuro e professionale.
+                        Ogni piercing che eseguo è un'opera su misura, progettata per valorizzare le tue caratteristiche uniche e il tuo stile personale. Utilizzo solo materiali di alta qualità e pratico procedure igieniche rigorose per garantire risultati eccellenti e una guarigione ottimale.
+                        Che tu stia cercando un piercing discreto o qualcosa di più audace e distintivo, sono qui per offrirti un servizio dedicato e personalizzato. Contattami per trasformare la tua visione in realtà e per esprimere la tua individualità attraverso l'arte dei piercing.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
