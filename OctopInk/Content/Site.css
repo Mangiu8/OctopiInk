@@ -1,47 +1,84 @@
 ﻿@import url('https://fonts.googleapis.com/css2?family=Abel&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Abel&family=Germania+One&display=swap');
-body, html{
+
+body, html {
     height: 100%;
-    background-color:black;
+    background: rgb(33,33,33);
+    background: linear-gradient(90deg, rgba(33,33,33,1) 0%, rgba(0,0,0,1) 50%, rgba(33,33,33,1) 100%);
 }
+
 main {
     background-color: #ffc4cd;
 }
-div.container.body-content{
+
+.my-nav {
+    background: rgb(238,174,202);
+    background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(32,32,32,1) 100%);
+}
+
+.navbar .nav-link, a.navbar-brand {
+    color: white;
+    font-family: "Germania One", system-ui;
+    font-style: normal;
+    font-size: 1rem;
+}
+
+a.navbar-brand {
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+    a.navbar-brand:hover {
+        color: white;
+    }
+
+@media(max-width: 768px) {
+    .my-ul, .my-li {
+        margin-left: 0 !important;
+        display: flex;
+        align-items: center;
+    }
+}
+
+div.container.body-content {
     background-color: #ffc4cd;
     padding: 0;
 }
+
 .hero-image {
-    background-image:
-        url('img/bg2.jpg');
+    background-image: url('img/bg2.jpg');
     height: 100%;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
-
 }
+
 .hero-h1 {
     text-shadow: 10px 8px 11px black;
     font-size: 6rem;
     color: #ffc4cd;
 }
+
 .hero-text {
     text-align: center;
     height: 20rem;
     transform: translate(0%, 30%);
 }
-h1, h2, h3{
+
+h1, h2, h3 {
     font-family: "Germania One", system-ui;
     font-weight: 800;
     font-style: normal;
     font-size: 2.5rem;
 }
+
 h4, h5, h6 {
     font-family: "Germania One", system-ui;
     font-weight: 800;
     font-style: normal;
 }
+
 p {
     font-family: "Abel", system-ui;
     font-weight: 400;
@@ -68,10 +105,6 @@ p {
     width: 21rem;
 }
 
-/* Stili per la classe separator */
-.separator {
-    /* Aggiungi stili appropriati per la linea di separazione */
-}
 
 /* Stili per la classe artist-info */
 .artist-info-right {
@@ -81,6 +114,7 @@ p {
     padding-block-end: 10px;
     padding-inline-end: 30px;
 }
+
 .artist-info-left {
     display: flex;
     align-items: flex-start;
@@ -89,22 +123,15 @@ p {
     padding-inline-start: 30px;
 }
 
-/* Stili per il nome dell'artista */
-.artist-name {
-    /* Aggiungi stili per il nome dell'artista */
-}
 
-/* Stili per i link social dell'artista */
-.artist-social {
-    /* Aggiungi stili per i link social */
-}
 .artist-details-right {
     display: flex;
     flex-wrap: wrap;
-    flex-direction:row-reverse;
+    flex-direction: row-reverse;
     gap: 10px;
     margin-bottom: 20px;
 }
+
 .artist-details-left {
     display: flex;
     flex-wrap: wrap;
@@ -118,6 +145,7 @@ p {
     gap: 12.4px;
     justify-content: flex-end;
 }
+
 .artist-images-left {
     display: flex;
     flex-wrap: wrap;
@@ -143,48 +171,57 @@ p {
     flex: 1.5;
     padding-left: 20px;
 }
-a:hover{
+
+a:hover {
     color: dimgrey;
 }
-a{
+
+a {
     color: white;
 }
+
 @media(max-width: 768px) {
-    .artist-description, .studio-description{
-       padding-top: 10px;
-       padding-left: 13px;
-       font-size: 1.5rem;
+    .artist-description, .studio-description {
+        padding-top: 10px;
+        padding-left: 13px;
+        font-size: 1.5rem;
     }
 }
-@media(max-width:1024px){
-    .th-img{
-        display:none;
+
+@media(max-width:1024px) {
+    .th-img {
+        display: none;
     }
 }
+
 @media(max-width:768px) {
     .hero-h1, .hero-text {
         transform: translate(0%, 30%);
         font-size: 5rem;
     }
 }
-@media(min-width:1440px){
+
+@media(min-width:1440px) {
     .artist-description, .studio-description {
         font-size: 1.5rem;
     }
 }
+
 @media (max-width: 768px) {
     .artist-details-left, .artist-details-right {
-        display: block; 
-        flex-direction: initial; 
-        gap: 0; 
+        display: block;
+        flex-direction: initial;
+        gap: 0;
     }
 }
+
 @media(max-width: 768px) {
     .artist-images-left, .artist-images-right {
         gap: 17px;
         justify-content: center;
     }
 }
+
 .product-col {
     overflow: hidden;
     position: relative;
@@ -195,15 +232,13 @@ a{
     bottom: -100%;
     left: 0;
     right: 0;
-    /*background-color: rgba(255, 255, 255, 0.8);*/
     background-color: #ffc4cda8;
-    
     transition: bottom 0.5s ease;
 }
 
 .product-col:hover .product-info,
 .product-col:focus-within .product-info {
-    bottom: 11px;
+    bottom: 8.8px;
 }
 
 .product-image-container img {
@@ -212,9 +247,10 @@ a{
     transition: transform 0.5s ease;
 }
 
-.product-col:hover .product-image-container img {  
+.product-col:hover .product-image-container img {
     transform: scale(1.05);
 }
+
 .product-button {
     font-size: 16px;
     border-radius: 0;
@@ -236,10 +272,11 @@ a{
 }
 
 #other-images-container {
-    display: flex; 
+    display: flex;
     gap: 10px;
-    align-items:center;
+    align-items: center;
 }
+
 @media(max-width: 768px) {
     #other-images-container {
         gap: 2px;
@@ -252,4 +289,16 @@ a{
 
 .other-image-img {
     width: 100px; /* Dimensione delle immagini aggiuntive */
+}
+.login-register-div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+@media(max-width: 768px) {
+    .login-register-div {
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+    }
 }

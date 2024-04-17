@@ -12,7 +12,7 @@
         <h1 class="text-center text-light pt-3">Registrati</h1>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-    <div style=" display: flex; flex-direction: row; justify-content: space-evenly;">
+    <div class="login-register-div">
         <div>
             <div class="form-group">
                 @Html.LabelFor(model => model.Nome, htmlAttributes: new { @class = "control-label col-md-2 text-light" })
@@ -44,7 +44,7 @@
                 </div>
             </div>
             <div class="form-group">
-                <div class="col-md-offset-2 col-md-10">
+                <div class="col-md-offset-2 col-md-12">
                     <input type="submit" value="Registrati" class="btn btn-light rounded-5 bg-gradient mt-2" />
                 </div>
             </div>

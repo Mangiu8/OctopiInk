@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
 </head>
 <body>
-    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm my-nav">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
                 <img src="~/Content/img/octo.png" width="60" alt="LogoOctopiInk" />
@@ -21,22 +21,22 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse d-sm-inline-flex justify-content-between">
-                <ul class="navbar-nav flex-grow-1">
+                <ul class="navbar-nav flex-grow-1 my-ul">
                     <li>@Html.ActionLink("Home", "Index", "Home", new { area = "" }, new { @class = "nav-link" })</li>
                         <li>@Html.ActionLink("Prodotti", "Index", "Prodotti", new { area = "" }, new { @class = "nav-link" })</li>
                     @if (User.Identity.IsAuthenticated && !User.IsInRole("Admin"))
                     {
                         <li>@Html.ActionLink("Carrello", "Index", "Carrello", new { area = "" }, new { @class = "nav-link" })</li>
-                        <li class="ms-auto">@Html.ActionLink("Logout", "Logout", "Home", new { area = "" }, new { @class = "nav-link " })</li>
+                        <li class="ms-auto my-li">@Html.ActionLink("Logout", "Logout", "Home", new { area = "" }, new { @class = "nav-link " })</li>
                     }
                     else if (User.IsInRole("Admin"))
                     {                       
                         <li>@Html.ActionLink("Gestione Prodotti", "Create", "Prodotti", new { area = "" }, new { @class = "nav-link" })</li>
-                        <li class="ms-auto">@Html.ActionLink("Logout", "Logout", "Home", new { area = "" }, new { @class = "nav-link " })</li>
+                        <li class="ms-auto my-li">@Html.ActionLink("Logout", "Logout", "Home", new { area = "" }, new { @class = "nav-link " })</li>
                     }
                     else
                     {
-                        <li class="ms-auto">@Html.ActionLink("Login", "Login", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+                        <li class="ms-auto my-li">@Html.ActionLink("Login", "Login", "Home", new { area = "" }, new { @class = "nav-link" })</li>
                     }
                 </ul>
             </div>
