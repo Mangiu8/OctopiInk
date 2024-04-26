@@ -8,12 +8,12 @@ body, html {
 }
 
 main {
-    background-color: #ffc4cd;
+    background-color: #fcc1c3;
 }
 
 .my-nav {
     background: rgb(238,174,202);
-    background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(32,32,32,1) 100%);
+    background: radial-gradient(circle, rgba(253,194,196,255) 0%, rgba(32,32,32,1) 100%);
 }
 
 .navbar .nav-link, a.navbar-brand {
@@ -41,7 +41,7 @@ a.navbar-brand {
 }
 
 div.container.body-content {
-    background-color: #ffc4cd;
+    background-color: #fcc1c3;
     padding: 0;
 }
 
@@ -57,7 +57,7 @@ div.container.body-content {
 .hero-h1 {
     text-shadow: 10px 8px 11px black;
     font-size: 6rem;
-    color: #ffc4cd;
+    color: #fcc1c3;
 }
 
 .hero-text {

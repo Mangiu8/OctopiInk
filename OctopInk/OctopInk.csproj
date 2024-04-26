@@ -203,6 +203,9 @@
     <Content Include="Content\img\Francesca.png" />
     <Content Include="Content\img\lucare.png" />
     <Content Include="Content\img\octo.png" />
+    <Content Include="Content\img\octoblack.jpeg" />
+    <Content Include="Content\img\octopink.jpeg" />
+    <Content Include="Content\img\octoWhite.JPG" />
     <Content Include="Content\img\piercing1.png" />
     <Content Include="Content\img\piercing2.png" />
     <Content Include="Content\img\piercing3.png" />
